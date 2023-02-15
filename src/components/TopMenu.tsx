@@ -4,8 +4,6 @@ import React from "react";
 
 interface ILink {
   href: string;
-  //   locale: string;
-  //   text: string;
 }
 
 const TopMenu = () => {
@@ -16,17 +14,17 @@ const TopMenu = () => {
       href: "/",
     },
     {
-      href: "/translated-page",
+      href: "/colors",
     },
   ];
 
   const elemMenu = links.map((it, i) => (
-    <>
-      <Link key={i} href={it.href} locale={router.locale}>
+    <div key={i}>
+      <Link href={it.href} locale={router.locale}>
         Navigate to {it.href} with locale : {router.locale}
       </Link>
       <br />
-    </>
+    </div>
   ));
 
   return (

@@ -1,18 +1,15 @@
 import { useRouter } from "next/router";
-import en from "data/locales/en";
-import he from "data/locales/he";
 import Lang from "@/types/e-lang";
 import { ILang } from "@/types/i-lang";
+import { getLangObject } from "logic/utils";
 
-const TranslatedPage = () => {
+const Colors = () => {
   const { locale } = useRouter();
-  const curLang: ILang = locale == Lang.Heb ? he : en;
+  const curLang: ILang = getLangObject(locale as Lang);
 
   return (
     <div>
-      <h1>Page : TranslatedPage </h1>
-      <p>locale : {locale}</p>
-      <h2>Colors</h2>
+      <h1>{curLang.titleColorPage}</h1>
       <ul>
         <li>{curLang.red}</li>
         <li>{curLang.green}</li>
@@ -22,4 +19,4 @@ const TranslatedPage = () => {
   );
 };
 
-export default TranslatedPage;
+export default Colors;

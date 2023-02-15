@@ -1,12 +1,14 @@
+import Lang from "@/types/e-lang";
+import { getLangObject } from "logic/utils";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  const router = useRouter();
+  const {locale} = useRouter();
+
 
   return (
     <main>
-      <h1>Page : Home </h1>
-      <p>locale : {router.locale}</p>
+      <h1>{getLangObject(locale as Lang).titleMainPage}</h1>
     </main>
   );
 }

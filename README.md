@@ -32,18 +32,21 @@ I am using <a href='https://nextjs.org/docs/advanced-features/i18n-routing#sub-p
 <li>access the english version via /en/translated-page</li>
 </ul>
 </li>
+
+<li><h3>use localstorage</h3>
+ <ui>
+ <li>Force hebrew as default language when the app loads</li>
+ <li>save locale on change</li>
+ </ui>
+</li>
 </ul>
+</li>
 
 <h2>Points of interest</h2>
 <ul>
 <li>using the locale as part of the routing path is nice because you dont need to access it globally , thus no need to use store \ context</li>
 </ul>
 
-<h2>Limitations</h2>
-<ul>
-<li>navigating on boot to http://localhost:3000/ i get en locale because this is my browser setup. but i want to start with he</li>
-<li>How to persist the locale that the user has chosen</li>
-</ul>
 
 <h2>Open issues</h2>
 <ul>

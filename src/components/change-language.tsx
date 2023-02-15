@@ -9,24 +9,22 @@ const ChangeLanguage = () => {
   useEffect(loadPersistedLocale, []);
 
   function loadPersistedLocale() {
-    const value = localStorage.getItem(LOCALE_KEY_LOCAL_STORAGE);
-    if (!value) {
+    let _locale = localStorage.getItem(LOCALE_KEY_LOCAL_STORAGE);
+    if (!_locale) {
       // --- first time ever on client machine so put the default
-      setLocaleExtended(DEFAULT_LANG);
+      _locale = DEFAULT_LANG;
     }
-    router.push(router.pathname, router.asPath, {
-      locale: value ? value : DEFAULT_LANG,
-    });
+    setLocaleExtended(_locale as Lang);
   }
 
   function setLocaleExtended(_locale: Lang): void {
     setLocale(_locale);
     localStorage.setItem(LOCALE_KEY_LOCAL_STORAGE, _locale);
+    router.push(router.pathname, router.asPath, { locale: _locale });
   }
 
   const changeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
     setLocaleExtended(e.target.value as Lang);
-    router.push(router.pathname, router.asPath, { locale: e.target.value });
   };
 
   return (

@@ -6,16 +6,11 @@ import { ILang } from "@/types/i-lang";
 
 const TranslatedPage = () => {
   const { locale } = useRouter();
-
   const curLang: ILang = locale == Lang.Heb ? he : en;
 
   return (
     <div>
       <h1>Page : TranslatedPage </h1>
-      <p>
-        Navigate here via /translated-page or /{Lang.Eng}/translated-page or
-        /{Lang.Heb}/translated-page
-      </p>
       <p>locale : {locale}</p>
       <h2>Colors</h2>
       <ul>

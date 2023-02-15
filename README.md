@@ -6,7 +6,7 @@ i18n on next.js as simiple as possible i.e. without using i18n packages
 <ul>
 <li>
 <h3>Translation engine</h3>
-I am using simple ts files : en.ts and he.ts under /data/locales to handle the translated text . This is based on <a href='https://github.com/NathanKr/i18n-ts-vanilla-playground'>i18n-ts-vanilla-playground</a> check the readme there. All tanslated file text objects inherit ILang to insure that all languages has the same key</li>
+I am using simple ts files : en.ts and he.ts under /data/locales to handle the translated text . This is based on <a href='https://github.com/NathanKr/i18n-ts-vanilla-playground'>i18n-ts-vanilla-playground</a> check the readme there. All tanslated file text objects inherit ILang to insure that all languages has the same keys</li>
 
 <li>
 <h3>Automatic locale detection</h3>
@@ -41,5 +41,7 @@ I am using <a href='https://nextjs.org/docs/advanced-features/i18n-routing#sub-p
 
 <h2>Open issues</h2>
 <ul>
+<li>navigating on boot to http://localhost:3000/ i get en locale because this is my browser setup. but i want to start with he</li>
 <li>How to persist the locale that the user has chosen</li>
+<li>canging the locale to he i get text that seems to be bigger - why</li>
 </ul>

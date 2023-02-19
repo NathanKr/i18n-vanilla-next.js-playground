@@ -1,8 +1,19 @@
 <h2>Motivation</h2>
 i18n on next.js as simiple as possible i.e. without using i18n packages
 
-<h2>Design</h2>
 
+<h2>Spec : What does i18n package need to provide in my opinion</h2>
+<ul>
+<li>Mark the dom element that need translation and its key</li>
+<li>Change the desired language (locale) and persist on client machine</li>
+<li>Files per language with key value pairs</li>
+<li>Get error if a key is missing from specific language file</li>
+<li>A function that given the key and locale return the value</li>
+</ul>
+
+
+<h2>Design</h2>
+This design the above spec
 <ul>
 <li>
 <h3>Translation engine</h3>
@@ -45,6 +56,7 @@ I am using <a href='https://nextjs.org/docs/advanced-features/i18n-routing#sub-p
 <h2>Points of interest</h2>
 <ul>
 <li>using the locale as part of the routing path is nice because you dont need to access it globally , thus no need to use store \ context</li>
+<li>I am able to come with simple design that does what i need without need of using i18n packages such as 
 </ul>
 
 

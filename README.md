@@ -64,6 +64,18 @@ implement the the routing per locale
 <h3>_app.tsx</h3>
 both ChangeLanguage and TopMenu are used here.
 
+<h3>get translated text</h3>
+
+```ts
+  const curLang: ILang = getLangObject(locale as Lang);
+
+  ...
+
+  <h1>{curLang.titleColorPage}</h1>
+```
+
+
+
 <h2>Points of interest</h2>
 <ul>
 <li>using the locale as part of the routing path is nice because you dont need to access it globally , thus no need to use store \ context</li>

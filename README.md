@@ -53,7 +53,7 @@ I am using <a href='https://nextjs.org/docs/advanced-features/i18n-routing#sub-p
 </ul>
 </li>
 
-<h2>Code</h2>
+<h2>Implementation</h2>
 
 <h3>ChangeLanguage component</h3>
 implement the language change and persitance to local storage

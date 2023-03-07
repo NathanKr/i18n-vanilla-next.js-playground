@@ -1,12 +1,18 @@
 import { DEFAULT_LANG, LOCALE_KEY_LOCAL_STORAGE } from "@/logic/constants";
 import Lang from "@/types/e-lang";
 import { useRouter } from "next/router";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 
 const ChangeLanguage = () => {
   const router = useRouter();
   const [locale, setLocale] = useState(router.locale);
-  useEffect(loadPersistedLocale, []);
+  // --- useCallback is used due to eslint warning
+  const setLocaleExtended = useCallback((_locale: Lang): void => {
+    setLocale(_locale);
+    localStorage.setItem(LOCALE_KEY_LOCAL_STORAGE, _locale);
+    router.push(router.pathname, router.asPath, { locale: _locale });
+  }, [router]);
+  useEffect(loadPersistedLocale, [setLocaleExtended]);
 
   function loadPersistedLocale() {
     let _locale = localStorage.getItem(LOCALE_KEY_LOCAL_STORAGE);
@@ -17,12 +23,7 @@ const ChangeLanguage = () => {
     setLocaleExtended(_locale as Lang);
   }
 
-  function setLocaleExtended(_locale: Lang): void {
-    setLocale(_locale);
-    localStorage.setItem(LOCALE_KEY_LOCAL_STORAGE, _locale);
-    router.push(router.pathname, router.asPath, { locale: _locale });
-  }
-
+  
   const changeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
     setLocaleExtended(e.target.value as Lang);
   };

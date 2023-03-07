@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Lang from "@/types/e-lang";
 import { ILang } from "@/types/i-lang";
-import { getLangObject } from "logic/utils";
+import { getLangObject } from "@/logic/utils";
 
 const Colors = () => {
   const { locale } = useRouter();

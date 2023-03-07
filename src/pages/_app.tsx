@@ -1,5 +1,5 @@
 import ChangeLanguage from "@/components/change-language";
-import TopMenu from "@/components/TopMenu";
+import TopMenu from "@/components/top-menu";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 

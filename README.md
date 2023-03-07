@@ -13,7 +13,7 @@ i18n on next.js as simiple as possible i.e. without using i18n packages
 
 
 <h2>Design</h2>
-This design the above spec
+This design satisfy the above spec
 <ul>
 <li>
 <h3>Translation engine</h3>
@@ -52,6 +52,17 @@ I am using <a href='https://nextjs.org/docs/advanced-features/i18n-routing#sub-p
 </li>
 </ul>
 </li>
+
+<h2>Code</h2>
+
+<h3>ChangeLanguage component</h3>
+implement the language change and persitance to local storage
+
+<h3>TopMenu component</h3>
+implement the the routing per locale
+
+<h3>_app.tsx</h3>
+both ChangeLanguage and TopMenu are used here.
 
 <h2>Points of interest</h2>
 <ul>

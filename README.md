@@ -67,6 +67,7 @@ both ChangeLanguage and TopMenu are used here.
 <h3>get translated text</h3>
 
 ```ts
+  const { locale } = useRouter();
   const curLang: ILang = getLangObject(locale as Lang);
 
   ...

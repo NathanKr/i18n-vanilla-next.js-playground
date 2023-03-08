@@ -31,7 +31,7 @@ const ChangeLanguage = () => {
     <div>
       <h2>Change language</h2>
       <p>current locale : {locale}</p>
-      <select onChange={changeLanguage} defaultValue={locale}>
+      <select onChange={changeLanguage} value={locale}>
         <option value={Lang.Heb}>HE</option>
         <option value={Lang.Eng}>EN</option>
       </select>
